@@ -4,7 +4,6 @@ int main() {
     char name[50], section[20];
     float g1, g2, g3, g4, average;
     
-
     printf("Enter Complete Name: ");
     fgets(name, sizeof(name), stdin);
 
