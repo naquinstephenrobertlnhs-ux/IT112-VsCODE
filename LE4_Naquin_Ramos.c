@@ -36,6 +36,5 @@ int main() {
     } else {
         printf("Remarks: Failed\n");
     }
-
     return 0;
 }
