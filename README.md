@@ -1,2 +1,2 @@
-# .vscode
-VScode
+# IT112-VsCODE
+NAQUIN, STEPHEN ROBERT Z.
