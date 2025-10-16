@@ -2,7 +2,7 @@
 
 int main() {
     int choice;
-    float balance = 1000.00, amount;
+    float balance = 500.00, amount;
 
     do {
         printf("\nINDIAN BANK HELP CENTER\n");
