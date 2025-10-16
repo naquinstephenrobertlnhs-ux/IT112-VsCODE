@@ -5,7 +5,7 @@ int main() {
     float balance = 500.00, amount;
 
     do {
-        printf("\nINDIAN BANK HELP CENTER\n");
+        printf("\nINDIAN BANK HEALTH CENTER\n");
         printf("Please Select your Transaction\n");
         printf("[1] Balance Inquiry\n");
         printf("[2] Deposit\n");
@@ -46,7 +46,7 @@ int main() {
                 break;
 
             case 4:
-                printf("Thank you for using INDIAN BANK HELP CENTER!\n");
+                printf("Thank you for using INDIAN BANK HEALTH CENTER!\n");
                 break;
 
             default:
