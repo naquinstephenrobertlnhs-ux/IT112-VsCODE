@@ -44,8 +44,12 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
 
-        // Read user’s choice
-        scanf("%d", &choice);
+        // Read user input safely (check if valid number)
+        if (scanf("%d", &choice) != 1) {
+            printf("\nInvalid choice. Try again.\n");
+            while (getchar() != '\n'); // clear invalid input
+            continue;
+        }
 
         // Clear leftover newline from input buffer
         getchar();
@@ -58,33 +62,37 @@ int main() {
 
                 // Input provider name
                 printf("\nEnter Provider Name: ");
-                fgets(providers[count].name, 50, stdin);
+                fgets(providers[count].name, sizeof(providers[count].name), stdin);
                 providers[count].name[strcspn(providers[count].name, "\n")] = 0;
 
                 // Input service type
                 printf("Enter Service Type (e.g., Plumber, Electrician): ");
-                fgets(providers[count].serviceType, 50, stdin);
+                fgets(providers[count].serviceType, sizeof(providers[count].serviceType), stdin);
                 providers[count].serviceType[strcspn(providers[count].serviceType, "\n")] = 0;
-
+                
                 // Input contact number
                 printf("Enter Contact Number: ");
-                fgets(providers[count].contact, 20, stdin);
+                fgets(providers[count].contact, sizeof(providers[count].contact), stdin);
                 providers[count].contact[strcspn(providers[count].contact, "\n")] = 0;
 
-                // Set default rating and review
-                providers[count].rating = 0;
-                strcpy(providers[count].review, "No reviews yet");
+            if (strlen(providers[count].name) == 0 ||
+                    strlen(providers[count].serviceType) == 0 ||
+                    strlen(providers[count].contact) == 0) {
+                    printf("\nError: All fields are required. Registration cancelled.\n");
 
-                // Confirmation message
-                printf("\n Provider Registered Successfully!\n");
+                } else {
+                    // Set default rating and review
+                    providers[count].rating = 0.0;
+                    strcpy(providers[count].review, "No reviews yet");
 
-                // Increase provider count
-                count++;
-            }
+                    // Confirmation message
+                    printf("\nProvider Registered Successfully!\n");
+                    count++;
+                }
 
-            // If directory is full
-            else {
-                printf("\n Directory is full. Cannot register more providers.\n");
+                // If directory is full
+            } else {
+                printf("\nDirectory is full. Cannot register more providers.\n");
             }
         }
 
