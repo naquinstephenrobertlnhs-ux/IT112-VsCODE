@@ -163,7 +163,9 @@ int main() {
                     printf("\n Access Granted to Admin Panel\n");
 
                     do {
-                        printf("\n--- ADMIN PANEL ---\n");
+                        printf("\n===================\n");
+                        printf("  ----ADMIN PANEL----  ");
+                        printf("\n===================\n");
                         printf("1. View All Providers\n");
                         printf("2. Edit Provider Info\n");
                         printf("3. Delete Provider\n");
@@ -228,12 +230,20 @@ int main() {
                             }
 
                             case 4:
-                                printf("\nReturning to main menu...\n");
-                                break;
+                                printf("\nAre you sure you want to exit the admin? (Y/N): ");
+                                scanf(" %c", &confirmExit);
+                                confirmExit = toupper(confirmExit);
+                                if (confirmExit == 'Y') {
+                                   printf("\nReturning to main menu...!\n");
+                               } else {
+                                   printf("\nBack to Admin Panel...\n");
+                                   adminChoice = 0;
+                               }
+                               break;
 
                             default:
                                 printf("\nInvalid admin choice.\n");
-                                break;
+                                
                         }
                     } while (adminChoice != 4);
                 } else {
