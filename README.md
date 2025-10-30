@@ -1,2 +1,2 @@
-# IT112-VsCODE
+# IT112-VsCoDe - 1st Sem - 1st Year
 NAQUIN, STEPHEN ROBERT Z.
